@@ -1,0 +1,39 @@
+# Q9. File Handling Program
+
+filename = "input.txt"   # Change file name if needed
+
+# --- Part (a): Count characters, words, lines ---
+with open(filename, "r") as f:
+    data = f.read()
+
+lines = data.split("\n")
+words = data.split()
+
+print("Total Characters:", len(data))
+print("Total Words:", len(words))
+print("Total Lines:", len(lines))
+
+# --- Part (b): Character frequency using dictionary ---
+freq = {}
+for ch in data:
+    if ch in freq:
+        freq[ch] += 1
+    else:
+        freq[ch] = 1
+
+print("\nCharacter Frequency:")
+print(freq)
+
+# --- Part (c): Print words in reverse order ---
+print("\nWords in Reverse Order:")
+print(words[::-1])
+
+# --- Part (d): Copy even and odd lines into separate files ---
+with open("File1.txt", "w") as f1, open("File2.txt", "w") as f2:
+    for i, line in enumerate(lines, start=1):
+        if i % 2 == 0:
+            f1.write(line + "\n")
+        else:
+            f2.write(line + "\n")
+
+print("\nEven and odd lines copied successfully.")
