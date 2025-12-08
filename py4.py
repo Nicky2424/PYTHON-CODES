@@ -1,19 +1,26 @@
-# Accept a character from the user
 char = input("Enter a single character: ")
 
-# Check if the input is a single character
+# Check length
 if len(char) != 1:
     print("Please enter only one character.")
 else:
-    # Check if the character is a digit
+    # Dictionary for digit names
+    digit_names = {
+        '0': "zero", '1': "one", '2': "two", '3': "three", '4': "four",
+        '5': "five", '6': "six", '7': "seven", '8': "eight", '9': "nine"
+    }
+
     if char.isdigit():
-        print(f"'{char}' is a numeric digit.")
-    # Check if the character is an alphabet
+        print("Numeric Digit")
+        print("In text:", digit_names[char])
+
     elif char.isalpha():
-        if char.islower():
-            print(f"'{char}' is a lowercase letter.")
+        print("Letter")
+        if char.isupper():
+            print("Uppercase")
         else:
-            print(f"'{char}' is an uppercase letter.")
-    # If neither digit nor alphabet, it is a special character
+            print("Lowercase")
+
     else:
-        print(f"'{char}' is a special character.")
+        print("Special Character")
+
