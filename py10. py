@@ -26,3 +26,6 @@ print("Point 1:", p1)
 print("Point 2:", p2)
 
 print("Distance between points:", p1.distance(p2))
+
+
+#ten
