@@ -1,0 +1,28 @@
+import math
+
+class Point:
+    def __init__(self, x, y):
+        self.x = float(x)
+        self.y = float(y)
+
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+    def distance(self, other):
+        return math.sqrt((self.x - other.x)**2 + (self.y - other.y)**2)
+
+
+# Taking input
+x1 = input("Enter x1: ")
+y1 = input("Enter y1: ")
+
+x2 = input("Enter x2: ")
+y2 = input("Enter y2: ")
+
+p1 = Point(x1, y1)
+p2 = Point(x2, y2)
+
+print("Point 1:", p1)
+print("Point 2:", p2)
+
+print("Distance between points:", p1.distance(p2))
