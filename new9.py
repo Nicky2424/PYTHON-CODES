@@ -86,3 +86,11 @@ Words in Reverse Order:
 day nice a Have test a is This coding love I fun is Python World Hello
 
 Even and odd lines copied successfully.
+Python is fun
+This is a test
+
+Hello World
+I love coding
+Have a nice day
+
+
