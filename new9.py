@@ -94,3 +94,57 @@ I love coding
 Have a nice day
 
 
+
+
+
+
+
+
+# Python program to read a file and perform various operations safely
+
+# Input filename
+filename = input("Enter filename (with extension, e.g., input.txt): ")
+
+try:
+    # Open file safely
+    with open(filename, "r") as f:
+        lines = f.readlines()  # Read all lines
+
+    # Combine all lines into one string for counting characters and words
+    data = "".join(lines)
+    words = data.split()
+
+    # --- Part (a): Count characters, words, lines ---
+    print("Total Characters:", len(data))
+    print("Total Words:", len(words))
+    print("Total Lines:", len(lines))
+
+    # --- Part (b): Frequency of each character ---
+    freq = {}
+    for ch in data:
+        freq[ch] = freq.get(ch, 0) + 1
+
+    print("\nCharacter Frequency:")
+    for ch, count in freq.items():
+        print(f"'{ch}': {count}")
+
+    # --- Part (c): Words in reverse order ---
+    print("\nWords in Reverse Order:")
+    print(" ".join(words[::-1]))
+
+    # --- Part (d): Copy even and odd lines into separate files ---
+    with open("File1.txt", "w") as f1, open("File2.txt", "w") as f2:
+        for i, line in enumerate(lines, start=1):
+            if i % 2 == 0:   # even line number
+                f1.write(line)
+            else:            # odd line number
+                f2.write(line)
+
+    print("\nEven and odd lines copied successfully.")
+    print("Check 'File1.txt' (even lines) and 'File2.txt' (odd lines).")
+
+except FileNotFoundError:
+    print("Error: File not found! Make sure the file exists in the same folder.")
+
+
+
